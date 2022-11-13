@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+readme = "README.md"
+name = "re-generate"
+description = "Package for random data generation via ReGex"
+keywords = [
+    "QA",
+    "random string",
+    "reverse regular expression",
+    "regex generator",
+    "testing",
+    "autotesting"
+]
+urls = {Homepage = "https://github.com/Warrfie/re-generate"}
+authors = [{name = "MaximKuklikov(Warrfie)", email = "warrfie@gmail.com"}]
+requires-python = ">=3.7"
