@@ -41,11 +41,11 @@ class ReLetter:
 
 class ReMultiplier:
     def __init__(self, regul):
-        if len(regul) == 3:
-            regul = int(regul[1])
-        else:
+        if "-" in regul:
             mult_range = range(int(regul.split(",")[0][1:]), int(regul.split(",")[1][:-1]))
             regul = random.choice(mult_range)
+        else:
+            regul = int(regul[1:-1])
         self.regul = regul
 
     def __repr__(self):

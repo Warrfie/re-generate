@@ -15,8 +15,8 @@ setup(
     author_email="warrfie@gmail.com",
     classifiers=[
         "Development Status :: 3 - Alpha",
-        "Intended Audience :: QA",
-        "Topic :: QA :: Testing",
+        "Intended Audience :: Information Technology",
+        "Topic :: Software Development :: Quality Assurance",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
