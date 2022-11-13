@@ -17,4 +17,4 @@ keywords = [
 urls = {Homepage = "https://github.com/Warrfie/re-generate"}
 authors = [{name = "MaximKuklikov(Warrfie)", email = "warrfie@gmail.com"}]
 requires-python = ">=3.7"
-version="0.1.1"
+version="0.1.2"
