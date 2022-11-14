@@ -7,6 +7,35 @@
 <p align="center">A simple and light package for QA development which can generate random strings via RegExr.</p>
 <p align="center">Not all RegExr mechanics are available now. But you can use all base methods and generate any string.</p>
 
+## Getting started
+
+This package is tested with Python 3.9-3.11 and Pypy 3.
+There are two ways to install the library:
+
+* Installation using pip (a Python package manager):
+
+```
+$ pip install re_generate
+```
+* Installation from source (requires git):
+
+```
+$ git clone https://github.com/Warrfie/re-generate
+$ cd re_generate
+$ python setup.py install
+```
+or:
+```
+$ pip install git+https://github.com/Warrfie/re-generate
+```
+
+It is generally recommended to use the first option.
+
+*Package is still under development, and it has regular updates, do not forget to update it regularly by calling*
+```
+pip install re_generate --upgrade
+```
+
 # <p align="center">Summary</a>
 
 ## What RegExr syntax supported
