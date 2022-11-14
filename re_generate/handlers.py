@@ -72,13 +72,13 @@ def re_letters_multiplier(reg_list: list) -> list:
     return temp
 
 
-def re_letters_activator(reg_list: list, char_lib, will_be_stripped) -> list:
+def re_letters_activator(reg_list: list, char_lib: str, will_be_stripped: bool) -> list:
     temp = []
     if will_be_stripped:
         for i, container in enumerate(reg_list):
             if isinstance(container, ReLetter):
                 if i == 0:
-                    temp.append(container.reg_string_generator(True))
+                    temp.append(container.reg_string_generator(char_lib, True))
                 else:
                     temp.append(container.reg_string_generator(char_lib))
             else:

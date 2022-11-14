@@ -12,7 +12,7 @@ class ReLetter:
     def __str__(self):
         return f"ReLetter class({self.regul})"
 
-    def reg_string_generator(self, char_lib, not_space=False):  # Получает строку формата [.+]{\d+} или [.+]
+    def reg_string_generator(self, char_lib: str, not_space=False) -> str:
         chars = ""
         reg = self.regul
         if "[^" in reg:

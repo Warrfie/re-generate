@@ -30,3 +30,10 @@ def test_range_braces_quantifiers():
 def test_or_syntax():
     reg_exr = r"a|b"
     assert re.match(reg_exr, re_generate.get_str(reg_exr))
+
+def test_complex_regular():
+    re_generate.main_generator.will_be_stripped = True
+    reg_exr = r'[^IVXLCDM]{1,7}[-][А-ЯЁ]{2}[ ][0-9]{6}'
+    generated_str = re_generate.get_str(reg_exr)
+    assert reg_exr[0] != " "
+    assert re.match(reg_exr, generated_str)
