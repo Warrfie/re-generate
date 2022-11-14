@@ -65,8 +65,12 @@ def re_letters_multiplier(reg_list: list) -> list:
     temp = []
     for i, container in enumerate(reg_list):
         if isinstance(container, ReMultiplier):
-            for _ in range(container.regul):
+            if isinstance(reg_list[i - 1], ReLetter):
+                reg_list[i - 1].amount = container.regul
                 temp.append(reg_list[i - 1])
+            else:
+                for _ in range(container.regul):
+                    temp.append(reg_list[i - 1])
         elif i + 1 == len(reg_list) or not isinstance(reg_list[i + 1], ReMultiplier):
             temp.append(container)
     return temp

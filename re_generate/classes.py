@@ -5,6 +5,7 @@ import re
 class ReLetter:
     def __init__(self, regul):
         self.regul = regul
+        self.amount = 1
 
     def __repr__(self):
         return f"ReLetter class({self.regul})"
@@ -20,7 +21,7 @@ class ReLetter:
             if not_space:
                 chars = "".join(chars).replace(" ", "")
                 assert len(chars) > 0, "Can't form string witch will be splitted"
-            return random.choice(chars)
+            return "".join([random.choice(chars) for _ in range(self.amount)])
         reg = reg[1:-1]
         if "\\" in reg:
             spes = re.findall(r"\\.", reg)
@@ -36,7 +37,7 @@ class ReLetter:
         if not_space:
             chars = "".join(chars).replace(" ", "")
             assert len(chars) > 0, "Can't form string witch will be splitted"
-        return random.choice(chars)
+        return "".join([random.choice(chars) for _ in range(self.amount)])
 
 
 class ReMultiplier:
