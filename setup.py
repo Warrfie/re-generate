@@ -7,7 +7,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="re-generate",
-    version="0.1.4",
+    version="0.1.5",
     description="Package for random data generation via ReGex",
     long_description=long_description,
     url="https://github.com/Warrfie/re-generate",
