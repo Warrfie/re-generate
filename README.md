@@ -40,17 +40,17 @@ pip install re_generate --upgrade
 
 ## What RegExr syntax supported
 
-|                type                | is supported       |
-|:----------------------------------:|--------------------|
-|         [] square brackets         | :white_check_mark: |
-|        [^] square brackets         | :white_check_mark: |
-|       {} braces quantifiers        | :white_check_mark: |
-|         {i,j} multiplyers          | :white_check_mark: |
-|            	&#124;  or             | :white_check_mark: |
-|             () groups              | :x:                |
-|  \n,\s,\d...etc reserved samples   | :x:                |
-|    *?,+?,?? greedy quantifiers     | :x:                |
-|       *,+,? lazy quantifiers       | :x:                |
+|              type               | is supported       |
+|:-------------------------------:|--------------------|
+|       [] square brackets        | :white_check_mark: |
+|      [^] ! square brackets      | :white_check_mark: |
+|      {} braces quantifiers      | :white_check_mark: |
+| {i,j} range braces quantifiers  | :white_check_mark: |
+|           	&#124;  or           | :white_check_mark: |
+|            () groups            | :x:                |
+| \n,\s,\d...etc reserved samples | :x:                |
+|   *?,+?,?? greedy quantifiers   | :x:                |
+|     *,+,? lazy quantifiers      | :x:                |
 
 ## Main functionality
 How generate
@@ -76,7 +76,7 @@ re_generate.main_generator.char_lib = "你f好п我Э的$中(国*朋Ъ友1234+=\
 Sometimes you need generate string without spaces at begin and end, like after .strip() function.
 ```python
 import re_generate
-re_generate.main_generator.will_be_splitted = True
+re_generate.main_generator.will_be_stripped = True
 ```
 # Tips and tricks
 In large project you can link that lib throw cfg py file like that
@@ -87,7 +87,7 @@ cfg.py
 ```python
 import re_generate
 re_generate.main_generator.char_lib = "你f好п我Э的$中(国*朋Ъ友1234+=\/,."
-re_generate.main_generator.will_be_splitted = True
+re_generate.main_generator.will_be_stripped = True
 your_func = re_generate
 ```
 and use it in your project
