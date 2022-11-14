@@ -9,7 +9,7 @@
 
 # <p align="center">Summary</a>
 
-##What RegExr syntax supported
+## What RegExr syntax supported
 
 |                type                | is supported       |
 |:----------------------------------:|--------------------|
@@ -23,7 +23,7 @@
 |    *?,+?,?? greedy quantifiers     | :x:                |
 |       *,+,? lazy quantifiers       | :x:                |
 
-##Main functionality
+## Main functionality
 How generate
 ```python
 import re_generate
@@ -37,7 +37,7 @@ print(re_generate.get_list(r"69[0-9]abc[a-zA-Z]228"), 10)
 ```
     ['694abcO228', '693abcG228', '692abcV228', '696abcy228', '693abca228', '690abcb228', '694abcD228', '696abck228', '696abcJ228', '692abca228']
 
-##What you can configue
+## What you can configue
 If you want to use your own library
 ```python
 import re_generate
@@ -49,7 +49,7 @@ Sometimes you need generate string without spaces at begin and end, like after .
 import re_generate
 re_generate.main_generator.will_be_splitted = True
 ```
-#Tips and tricks
+# Tips and tricks
 In large project you can link that lib throw cfg py file like that
 ```
 cfg.py
