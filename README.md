@@ -15,18 +15,18 @@ There are two ways to install the library:
 * Installation using pip (a Python package manager):
 
 ```
-$ pip install re_generate
+pip install re_generate
 ```
 * Installation from source (requires git):
 
 ```
-$ git clone https://github.com/Warrfie/re-generate
-$ cd re_generate
-$ python setup.py install
+git clone https://github.com/Warrfie/re-generate
+cd re-generate
+python setup.py install
 ```
 or:
 ```
-$ pip install git+https://github.com/Warrfie/re-generate
+pip install git+https://github.com/Warrfie/re-generate
 ```
 
 It is generally recommended to use the first option.
