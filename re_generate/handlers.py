@@ -72,9 +72,9 @@ def re_letters_multiplier(reg_list: list) -> list:
     return temp
 
 
-def re_letters_activator(reg_list: list, char_lib, will_be_splitted) -> list:
+def re_letters_activator(reg_list: list, char_lib, will_be_stripped) -> list:
     temp = []
-    if will_be_splitted:
+    if will_be_stripped:
         for i, container in enumerate(reg_list):
             if isinstance(container, ReLetter):
                 if i == 0:
