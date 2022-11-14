@@ -77,7 +77,7 @@ def re_letters_activator(reg_list: list, char_lib: str, will_be_stripped: bool) 
     if will_be_stripped:
         for i, container in enumerate(reg_list):
             if isinstance(container, ReLetter):
-                if i == 0:
+                if i == 0 or i + 1 == len(reg_list):
                     temp.append(container.reg_string_generator(char_lib, True))
                 else:
                     temp.append(container.reg_string_generator(char_lib))

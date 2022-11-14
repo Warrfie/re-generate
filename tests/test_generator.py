@@ -35,5 +35,12 @@ def test_complex_regular():
     re_generate.main_generator.will_be_stripped = True
     reg_exr = r'[^IVXLCDM]{1,7}[-][А-ЯЁ]{2}[ ][0-9]{6}'
     generated_str = re_generate.get_str(reg_exr)
-    assert reg_exr[0] != " "
+    assert generated_str[0] != " " and generated_str[-1] != " "
+    assert re.match(reg_exr, generated_str)
+
+def test_strip_regular():
+    re_generate.main_generator.will_be_stripped = True
+    reg_exr = r'[ M][ M]{6}'
+    generated_str = re_generate.get_str(reg_exr)
+    assert generated_str[0] != " " and generated_str[-1] != " "
     assert re.match(reg_exr, generated_str)
