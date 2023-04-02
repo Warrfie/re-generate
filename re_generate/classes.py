@@ -3,9 +3,9 @@ import re
 
 
 class ReLetter:
-    def __init__(self, regul):
+    def __init__(self, regul, amount=1):
         self.regul = regul
-        self.amount = 1
+        self.amount = amount
 
     def __repr__(self):
         return f"ReLetter class({self.regul})"

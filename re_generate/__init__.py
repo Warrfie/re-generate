@@ -1,5 +1,5 @@
 from re_generate.generator import ReGenerator
 
-main_generator = ReGenerator()
-get_str = main_generator.re_generator
-get_list = main_generator.re_generator_list
+re_generator = ReGenerator()
+re_generate = re_generator.re_generator
+re_generate_list = re_generator.re_generator_list

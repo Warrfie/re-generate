@@ -7,6 +7,11 @@
 <p align="center">A simple and light package for QA development which can generate random strings via RegExr.</p>
 <p align="center">Not all RegExr mechanics are available now. But you can use all base methods and generate any string.</p>
 
+## New features
+1.0.8:
+1) Finally, added () groups syntax support
+2) Global changes in generation start function (sorry, it's alpha)
+
 ## Getting started
 
 This package is tested with Python 3.9-3.11 and Pypy 3.
@@ -42,41 +47,41 @@ pip install re_generate --upgrade
 
 |              type               | is supported       |
 |:-------------------------------:|--------------------|
-|       [] square brackets        | :white_check_mark: |
-|      [^] ! square brackets      | :white_check_mark: |
-|      {} braces quantifiers      | :white_check_mark: |
-| {i,j} range braces quantifiers  | :white_check_mark: |
-|           	&#124;  or           | :white_check_mark: |
-|            () groups            | :x:                |
-| \n,\s,\d...etc reserved samples | :x:                |
-|   *?,+?,?? greedy quantifiers   | :x:                |
-|     *,+,? lazy quantifiers      | :x:                |
+|       [] square brackets        | √ |
+|      [^] ! square brackets      | √ |
+|      {} braces quantifiers      | √ |
+| {i,j} range braces quantifiers  | √ |
+|           	&#124;  or           | √ |
+|            () groups            | √                |
+| \n,\s,\d...etc reserved samples | ✖                |
+|   *?,+?,?? greedy quantifiers   | ✖                |
+|     *,+,? lazy quantifiers      | ✖                |
 
 ## Main functionality
 How generate
 ```python
-import re_generate
-print(re_generate.get_str(r"69[0-9]abc[a-zA-Z]228"))
+from re_generate import re_generate
+print(re_generate(r"69[0-9]abc[a-zA-Z]228"))
 ```
     '693abcb228'
 How generate several strings ot once
 ```python
-import re_generate
-print(re_generate.get_list(r"69[0-9]abc[a-zA-Z]228"), 10)
+from re_generate import re_generate_list
+print(re_generate_list(r"69[0-9]abc[a-zA-Z]228"), 10)
 ```
     ['694abcO228', '693abcG228', '692abcV228', '696abcy228', '693abca228', '690abcb228', '694abcD228', '696abck228', '696abcJ228', '692abca228']
 
 ## What you can configue
 If you want to use your own library
 ```python
-import re_generate
-re_generate.main_generator.char_lib = "你f好п我Э的$中(国*朋Ъ友1234+=\/,."
+from re_generate import re_generator
+re_generator.char_lib = "你f好п我Э的$中(国*朋Ъ友1234+=\/,."
 ```
 
 Sometimes you need generate string without spaces at begin and end, like after .strip() function.
 ```python
-import re_generate
-re_generate.main_generator.will_be_stripped = True
+from re_generate import re_generator
+re_generator.will_be_stripped = True
 ```
 # Tips and tricks
 In large project you can link that lib throw cfg py file like that
@@ -85,10 +90,10 @@ cfg.py
 ```
 
 ```python
-import re_generate
-re_generate.main_generator.char_lib = "你f好п我Э的$中(国*朋Ъ友1234+=\/,."
-re_generate.main_generator.will_be_stripped = True
-your_func = re_generate
+from re_generate import re_generator
+re_generator.char_lib = "你f好п我Э的$中(国*朋Ъ友1234+=\/,."
+re_generator.will_be_stripped = True
+your_func = re_generator.re_generator
 ```
 and use it in your project
 ```
@@ -97,7 +102,7 @@ your_code.py
 
 ```python
 from cfg import your_func
-print(your_func.get_str(r"69[^0-9]abc[a-zA-Z]22[ 8]"))
+print(your_func(r"69[^0-9]abc[a-zA-Z]22[ 8]"))
 ```
     '69我abcb228'
 
